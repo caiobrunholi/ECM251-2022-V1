@@ -1,8 +1,8 @@
-# H1 Requisitos do Projeto Anual
+# Requisitos do Projeto Anual
 
-# H2 Anotações de Visual 
+## Anotações de Visual 
 
-# H3 - UX and UI
+#### UX and UI
 Devem se basear em plataformas já existentes, como:
     - Steam
     - Nuuvem
@@ -10,7 +10,7 @@ Devem se basear em plataformas já existentes, como:
 
 
 
-# H3 - Descritos Pelo Cliente
+### Descritos Pelo Cliente
 - Comprar Jogos
 - Devolução/Reembloso de Jogos 
     - Prazo máximo de arrependimento: 7 dias
@@ -21,7 +21,7 @@ Devem se basear em plataformas já existentes, como:
 
 
 
-# H3 - Observado nas Referências
+### Observado nas Referências
 - Home
     - Promoções
     - Principais Jogos 
@@ -45,28 +45,30 @@ Devem se basear em plataformas já existentes, como:
     - Trade de Itens
         - Perfil de Jogos 
 
-# H2 Uso e Funcionalidade
 
-# H3 Conta
+
+## Uso e Funcionalidade
+
+### Conta
 - Criação de Conta
 - Dados do Usuário
 - Verifição de duas etapas
 - Recuperação de Conta
 - Meus Produtos 
 
-# H3 Carrinho
+### Carrinho
 - Selecionar Jogos
 - Selecionar Itens
 - Método de Pagamento
 - Confirmação de Pagamento
 
-# H3 Pesquisa
+### Pesquisa
 
-# H3 Jogos 
+### Jogos 
 
-# H3 Itens
+### Itens
 
-# H3 Comunidade
+### Comunidade
 
 
 
