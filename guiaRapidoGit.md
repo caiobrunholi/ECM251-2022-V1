@@ -1,4 +1,4 @@
-# ecm251-2022
+# ECM251-2022-V1
 Repositório criado para a disciplina ECM251 - 2022
 
 # EMC251 - Utilizando Git
