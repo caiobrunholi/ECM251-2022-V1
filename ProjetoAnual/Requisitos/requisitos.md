@@ -1,8 +1,8 @@
 # Requisitos do Projeto Anual
 
-## Anotações de Visual 
+# **Anotações de Visual** 
 
-#### UX and UI
+### **UX and UI**
 Devem se basear em plataformas já existentes, como:
     - Steam
     - Nuuvem
@@ -10,7 +10,7 @@ Devem se basear em plataformas já existentes, como:
 
 
 
-### Descritos Pelo Cliente
+### **Descritos Pelo Cliente**
 - Comprar Jogos
 - Devolução/Reembloso de Jogos 
     - Prazo máximo de arrependimento: 7 dias
@@ -21,7 +21,7 @@ Devem se basear em plataformas já existentes, como:
 
 
 
-### Observado nas Referências
+### **Observado nas Referências**
 - Home
     - Promoções
     - Principais Jogos 
@@ -47,28 +47,54 @@ Devem se basear em plataformas já existentes, como:
 
 
 
-## Uso e Funcionalidade
+# **Uso e Funcionalidade**
 
-### Conta
+### **Navegação**
+- Conta no canto superior direito
+    - Ao clicar leva à pagina de perfil
+- Carrinho dp lado esquerdo da conta 
+- Logo do Site no canto superior direito
+    - Ao clicar leva à Home
+
+### **Conta**
 - Criação de Conta
 - Dados do Usuário
 - Verifição de duas etapas
 - Recuperação de Conta
 - Meus Produtos 
 
-### Carrinho
+### **Perfil**
+- Vizualização de Jogos do Usuário *(Público)*
+     - Instalar/Desinstalar Jogo *(Privado)*
+        - Botão do lado do nome do Jogo
+    - Horas jogadas *(Público)*
+        - Abaixo de Nome e Logo do Jogo
+    - Troféus de cada Jogo *(Público)*
+        - Abaixo de horas jogadas
+    - Itens comprados nos jogos *(Privado)*
+        - Abaixo de Troféus
+
+- Configurações da conta *(Privado)*
+    - Canto Superior
+
+
+
+### **Carrinho**
 - Selecionar Jogos
 - Selecionar Itens
 - Método de Pagamento
 - Confirmação de Pagamento
 
-### Pesquisa
+### **Pesquisa**
 
-### Jogos 
+### **Jogos**
 
-### Itens
+### **Itens**
 
-### Comunidade
+### **Comunidade**
+
+# **Classes**
+
 
 
 
