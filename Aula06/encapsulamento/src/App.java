@@ -1,11 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        Conta c1 = new Conta();
-        c1.depositar(250);
-        if(c1.sacar(200)){
-            System.out.println("Você sacou 200!");
-        }
-        c1.depositar(200);
-        c1.vizualizarSaldo();
+        Cliente c1 = new Cliente();
+        c1.setNome("Caio");
+        System.out.println("Nome do cliente:" + c1.getNome());
     }
 }
