@@ -3,8 +3,12 @@ public class Conta{
     private int numero;
     private double saldo;
 
-    //Métodos da classe 
+    public Conta(int numero){
+        this.numero = numero;
+        saldo = 0;
+    }
 
+    //Métodos da classe 
     public void vizualizarSaldo(){
         System.out.println("Saldo atual na conta " + numero + ": R$" + saldo);
     }

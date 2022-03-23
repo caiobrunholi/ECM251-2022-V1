@@ -3,7 +3,7 @@ public class App {
         Cliente c1 = new Cliente("Caio",
             "123456789",
             "20.01285-3@maua.br", 
-            new Conta()
+            new Conta(1234)
         );
 
         System.out.println("Nome do cliente:" + c1.getNome());
