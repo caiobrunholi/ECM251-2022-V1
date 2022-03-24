@@ -1,5 +1,3 @@
-import java.lang.reflect.GenericSignatureFormatError;
-
 public class Conta{
     //Atributos da nossa classe
     private int numero;
@@ -39,7 +37,7 @@ public class Conta{
 
     public String toString(){
         return "Conta Numero:" + numero + 
-        "\n Saldo:" + vizualizarSaldo() + 
-        "\n Cliente:" + cliente.getNome();
+        "\nSaldo:" + vizualizarSaldo() + 
+        "\nCliente:" + cliente.getNome();
     }
 }
