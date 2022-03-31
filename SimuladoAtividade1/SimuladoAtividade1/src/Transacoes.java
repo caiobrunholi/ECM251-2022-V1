@@ -5,5 +5,6 @@ public class Transacoes {
 
         return qrcode; 
     }
+
     
 }
