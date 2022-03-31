@@ -12,10 +12,13 @@ public class Atividade1 {
         System.out.println(conta2);
         System.out.println(conta3);
         
+        
 
         System.out.println(Transacoes.GerarQrCode(conta1,250.0));
+        String qrcode1 = Transacoes.GerarQrCode(conta1,250.0);
 
         System.out.println(Transacoes.GerarQrCode(conta2,1000.0));
+        String qrcode2 = Transacoes.GerarQrCode(conta2,1000.0);
 
         System.out.println("Estado Final:");
         System.out.println(conta1);
