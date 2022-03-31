@@ -10,6 +10,12 @@ public class Usuario {
         this.setEmail(email);
     }
 
+    public void visualizarCliente(){
+        System.out.println("Dados do Cliente:");
+        System.out.println("Nome:" + nome);
+        System.out.println("E-mail:" + email);
+    }
+
     public String getEmail() {
         return email;
     }

@@ -1,22 +1,20 @@
-import java.util.StringTokenizer;
-
 public class Conta {
     private String idConta;
-    private String cliente;
+    private Usuario cliente;
     private double saldo;
     
         //Construtor
-    public Conta (String idConta, String cliente, double saldo){
+    public Conta (String idConta, Usuario cliente, double saldo){
         this.setIdConta(idConta);
         this.setCliente(cliente);
         this.setSaldo(saldo);
     }
 
-    public String getCliente() {
+    public Usuario getCliente() {
         return cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Usuario cliente) {
         this.cliente = cliente;
     }
 
@@ -34,6 +32,12 @@ public class Conta {
 
     public void setIdConta(String idConta) {
         this.idConta = idConta;
+    }
+
+    public String toString(){
+        return "ID:" + idConta + 
+        " - Cliente:" + cliente.getNome() +
+        " - Saldo:" + getSaldo();
     }
     
     
