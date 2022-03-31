@@ -14,11 +14,18 @@ public class Sistema {
 
     }
 
-    boolean transferirDinheiro(double valor, Conta origem, Conta destino){
+    public boolean transferirDinheiro(double valor, Conta origem, Conta destino){
         if(!this.sacar(origem, valor)) return false;
         if(!this.receber(destino, valor)) return false;
         return true;
     }
 
+
+    public boolean pagarQrCode(Conta origem, String qrcode){
+        // procedimentos para pagamento 
+        // identificação das contas
+        // transferencia da conta de origem para conta obtida pelo qrcode 
+        return true;
+    }
 
 }
