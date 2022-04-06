@@ -6,5 +6,8 @@ public class App {
         AcademicStudent naruto = new AcademicStudent("Naruto", "Uzumaki", new String[]{"Jutsu dos clones da sombra", "Rasengan", "Chamar Kurama"});
         System.out.println(naruto.train());
         System.out.println(naruto.play());
+        Genin ninja = new Genin("Nome", "konoha", new String[]{"Jutsu1", "Jutsu2"}, "Coletar itens");
+        System.out.println(ninja.goToMission());
+        System.out.println(ninja.train());
     }
 }
