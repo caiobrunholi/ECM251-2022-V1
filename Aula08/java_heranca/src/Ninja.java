@@ -19,4 +19,13 @@ public class Ninja{
     public String toString() {
         return "Ninja [family=" + family + ", jutsus=" + Arrays.toString(jutsus) + ", name=" + name + "]";
     }
+
+    public String getName() {
+        return name;
+    }
+    
+    public String getFamily() {
+        return family;
+    }
+
 }
