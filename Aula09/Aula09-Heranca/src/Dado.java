@@ -2,7 +2,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Dado {
     private String id;
-    private int face;
+    protected int face;
 
     public Dado(String id) {
         this.id = id;
@@ -14,13 +14,11 @@ public class Dado {
     }
 
     public void rodar(){
-        this.face = ThreadLocalRandom.current().nextInt(1, 7);
-
+        this.face = ThreadLocalRandom.current().nextInt(1,7);
     }
 
     @Override
     public String toString() {
         return "Dado [face=" + face + ", id=" + id + "]";
     }
-
 }
