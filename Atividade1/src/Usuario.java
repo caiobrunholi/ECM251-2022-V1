@@ -2,13 +2,12 @@ public class Usuario {
     private String nome;
     private int rg;
     private String email;
-    public Veiculo veiculo;
+    private Veiculo veiculo;
     
     public Usuario(String nome, int rg, String email, Veiculo veiculo) {
         this.nome = nome;
         this.rg = rg;
         this.email = email;
-        this.veiculo = veiculo;
     }
     
     public Usuario(String nome, int rg, String email) {
@@ -44,6 +43,14 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario [email=" + email + ", nome=" + nome + ", rg=" + rg + ", veiculo=" + veiculo + "]";
+    }
+
+    public void pegarEmprestado (Veiculo veiculo){
+        setVeiculo(veiculo);
+    }
+
+    public void devolver (Veiculo veiculo){
+        setVeiculo(null);
     }
     
 }

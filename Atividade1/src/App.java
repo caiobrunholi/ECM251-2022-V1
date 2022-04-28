@@ -4,8 +4,9 @@
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Inicio");
+        System.out.println("INICIO");
         Sistema sistema = new Sistema();
         sistema.run();
+        System.out.println("FIM");
     }
 }
