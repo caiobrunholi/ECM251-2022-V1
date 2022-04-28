@@ -49,7 +49,7 @@ public class Usuario {
         setVeiculo(veiculo);
     }
 
-    public void devolver (Veiculo veiculo){
+    public void devolver (){
         setVeiculo(null);
     }
     
