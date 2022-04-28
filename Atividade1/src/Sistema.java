@@ -1,9 +1,11 @@
 public class Sistema {
     public void run(){
-        Veiculo carro = new Carro("carro", 1000, "Honda", "NSX");
-        Veiculo moto = new Moto("moto", 20000);
-        Veiculo bicicleta = new Bicicleta("bicicleta", 30000);
-        Veiculo patinete = new Patinete("patinete", 40000);
+        Carro carro = new Carro("carro", 1000, "Honda", "NSX");
+        Moto moto = new Moto("moto", 20000);
+        Bicicleta bicicleta = new Bicicleta("bicicleta", 30000);
+        Patinete patinete = new Patinete("patinete", 40000);
+
+        System.out.println(carro);
 
         Usuario senna = new Usuario("Senna", 111111111, "airton@mclaren.com");
         senna.pegarEmprestado(carro);
@@ -16,6 +18,9 @@ public class Sistema {
 
         trocar(senna, mcqueen);
         trocar(eleanor, mate);
+
+        mate.devolver();
+        System.out.println(mate);
     }
 
     public void trocar (Usuario u1, Usuario u2){
