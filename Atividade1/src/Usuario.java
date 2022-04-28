@@ -2,7 +2,7 @@ public class Usuario {
     private String nome;
     private int rg;
     private String email;
-    private Veiculo veiculo;
+    public Veiculo veiculo;
     
     public Usuario(String nome, int rg, String email, Veiculo veiculo) {
         this.nome = nome;
@@ -10,6 +10,7 @@ public class Usuario {
         this.email = email;
         this.veiculo = veiculo;
     }
+    
     public Usuario(String nome, int rg, String email) {
         this.nome = nome;
         this.rg = rg;
@@ -38,6 +39,11 @@ public class Usuario {
     }
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario [email=" + email + ", nome=" + nome + ", rg=" + rg + ", veiculo=" + veiculo + "]";
     }
     
 }
