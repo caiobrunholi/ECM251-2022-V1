@@ -10,6 +10,10 @@ public class Sistema {
         String resultado = avaliaJogadas(jogada1, jogada2);
         //Exibição do resultado
         System.out.println("Resultado:" + resultado);
+        System.out.println(jogada1);
+        System.out.println("VERSUS");
+        System.out.println(jogada2);
+
     }
 
     private static Jogada sortearJogada() {
