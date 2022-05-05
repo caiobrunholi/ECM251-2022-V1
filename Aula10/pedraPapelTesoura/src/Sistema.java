@@ -13,10 +13,12 @@ public class Sistema {
     }
 
     private static Jogada sortearJogada() {
-        Jogada jogadas[] = new Jogada[3];
+        Jogada jogadas[] = new Jogada[5];
         jogadas[0] = new Pedra();
         jogadas[1] = new Papel();
         jogadas[2] = new Tesoura();
+        jogadas[3] = new Spock();
+        jogadas[4] = new Lagarto();
         return jogadas[ThreadLocalRandom.current().nextInt(jogadas.length)];
     }
 

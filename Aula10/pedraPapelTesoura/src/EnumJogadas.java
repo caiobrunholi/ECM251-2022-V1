@@ -1,3 +1,3 @@
 public enum EnumJogadas {
-    PEDRA, PAPEL, TESOURA; // cte é por convenção em letras maiúsculas
+    PEDRA, PAPEL, TESOURA, LAGARTO, SPOCK; // cte é por convenção em letras maiúsculas
 }
