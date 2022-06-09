@@ -1,0 +1,3 @@
+public enum EnumFuncao {
+    MOBILEMEMBER, HEAVYLIFTER, SCRIPTGUY, BIGBROTHER;
+}
