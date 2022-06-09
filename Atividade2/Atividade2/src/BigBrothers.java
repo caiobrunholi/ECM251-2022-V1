@@ -6,7 +6,7 @@ public class BigBrothers extends Membro{
         setExtraMessage(extraMessage);
     }
 
-    private final String regularMessage = "Sempre ajudando as pessoas membros ou não S2!";
+    private final String regularMessage = "Sempre ajudando as pessoas membros ou nao S2!";
     private final String extraMessage = "...";
     
 }
