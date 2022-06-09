@@ -65,17 +65,14 @@ public class App {
 
     public static void removerMembro(String userName, ArrayList<Membro> AllMembers){
         int i = 0;
+        int remove_i = 0;
         for (Membro member : AllMembers){
             if(member.getUserName().equals(userName)){
-                System.out.println(member.getUserName()+"="+userName);
+                remove_i = i;
             }
-            if(member.getUserName().equals(userName)){
-            }else{
-                // i++;
-            }
+            i++;
         }
-        System.out.println("index a ser removido: "+i);
-        // AllMembers.remove(i);
+        AllMembers.remove(remove_i);
     }
 }
 
