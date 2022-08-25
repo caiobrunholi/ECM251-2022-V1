@@ -17,4 +17,4 @@ except Exception:
     print("Algo nao esperado occorreu:")
     print_stack()
 finally:
-    print("Chegamso no final")
+    print("Chegamos no final")
