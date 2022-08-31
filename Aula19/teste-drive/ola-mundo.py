@@ -1,6 +1,6 @@
 import ttkbootstrap as ttk
 from tkinter import PhotoImage
-from ttkbootstrap import LEFT
+from ttkbootstrap import LEFT,DANGER,OUTLINE
 
 base = ttk.Window(
     title="Minha GUI Mauá",
@@ -23,5 +23,14 @@ ttk.Button(
     bootstyle="default",
     command=acao_botao
 ).pack(side=LEFT, padx=10, pady=5) #onde fica dentro
+
+# Criando um segundo botao
+bot2 = ttk.Button(
+    base, 
+    text="Segundo Botão",
+    bootstyle=(DANGER,OUTLINE),
+    command=acao_botao
+)
+bot2.pack(side=LEFT, padx=10, pady=5) 
 
 base.mainloop()
