@@ -1,10 +1,10 @@
 # Caio Rabinovich Panes Brunholi
 # RA: 20.01285-3
 
-from gettext import install
-from itertools import product
-from turtle import position
 import streamlit as st
+
+# NAO CONSIGO IMPORTAR MODELS OU CONTROLERS
+# NAO CONSIGO FAZER BOTAO IR PARA OUTRA ST.TAB
 
 st.image("assets./shopping_bag.png", width=75) 
 st.title("Lojinha Online")
@@ -67,7 +67,6 @@ with shop_kart:
             match installments:
                 case "1x à vista":
                     installments_opt = 1
-
                 case "2x sem juros":
                     installments_opt = 2
                 case "3x sem juros":
@@ -89,10 +88,20 @@ with account:
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        pass
+        st.markdown("### Dados da Conta")
+        st.markdown("")
+        st.markdown("### Métodos de Pagamento")
+        st.markdown("")
+        st.markdown("### Adicionar Crédito à Conta")
+        st.markdown("")
+        st.markdown("### Compras Anteriores")
+        st.markdown("")
+        st.markdown("### Devoluções")
     
     with col2:
         pass
 
     with col3:
-        pass
+        st.image("assets./female_user.png")
+        st.header("Fulana")
+        st.metric(label="Credito da conta", value=f'R$211,50',delta='R$20,00')

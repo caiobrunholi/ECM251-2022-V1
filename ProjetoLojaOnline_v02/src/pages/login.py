@@ -3,6 +3,8 @@
 
 import streamlit as st
 
+# Login usando o user_controller ainda não implementado
+
 # imagens
 png_unknown = "assets./unknown_user.png"
 png_female = "assets./female_user.png"
