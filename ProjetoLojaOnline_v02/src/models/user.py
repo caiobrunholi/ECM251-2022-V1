@@ -1,7 +1,7 @@
 # Caio Rabinovich Panes Brunholi
 # RA: 20.01285-3
 
-from models.credit_card import CreditCard
+from src.models.credit_card import CreditCard
 class User():
     def __init__(self, name, email, username, password, credit_card, account_credit):
         self.name = name

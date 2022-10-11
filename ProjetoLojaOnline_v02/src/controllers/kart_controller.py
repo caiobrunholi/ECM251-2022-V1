@@ -3,6 +3,6 @@
 
 #  PRECISA DESSA CLASSE??????
 
-from models.kart import Kart
+from src.models.kart import Kart
 
-kart1 = Kart
+kart1 = Kart()

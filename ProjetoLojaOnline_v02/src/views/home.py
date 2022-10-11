@@ -2,6 +2,7 @@
 # RA: 20.01285-3
 
 import streamlit as st
+from src.controllers.kart_controller import Kart
 
 # NAO CONSIGO IMPORTAR MODELS OU CONTROLERS
 # NAO CONSIGO FAZER BOTAO IR PARA OUTRA ST.TAB

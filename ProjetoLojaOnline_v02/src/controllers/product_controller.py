@@ -1,7 +1,7 @@
 # Caio Rabinovich Panes Brunholi
 # RA: 20.01285-3
 
-from models.product import Product
+from src.models.product import Product
 
 # Dados de Produto:
 # name, category, description, price, image
