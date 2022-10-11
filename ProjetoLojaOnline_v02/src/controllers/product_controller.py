@@ -23,5 +23,5 @@ class ProductController():
             Product("X-TUDÃO", "Comida", "Um X-Tudo mais completo que o completão", 20, "assets./burguer.png"),
             Product("Salgadinho", "Comida", "Nós dois sabemos que você vai continuar com fome depois", 5, "assets./chips.png"),
             Product("Redbull", "Comida", "Um energético que só está aqui pois patrocina o CA", 6, "assets./redbull.png"),
-            Product("Suco de Açaí com Paçoquinha", "Comida", "Esse suco vai te dar um boost de energia incareditaaaAAAAAVVVEEEELLLLLL! (Não recomendado para pessoas de intestino fraco)", 12, "assets./acai.png")
+            Product("Suco de Açaí com Paçoquinha", "Comida", "Esse suco vai te dar um boost de energia incareditaaaAAAAAVVVEEEELLLLLL! (Não recomendado para pessoas de intestino fraco)", 12, "assets./acai.jpg")
         ]

@@ -26,5 +26,5 @@ class Product():
         return self._price
     
     def get_image(self):
-        return self.image
+        return self._image
 
