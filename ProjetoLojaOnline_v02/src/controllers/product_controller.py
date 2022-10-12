@@ -10,7 +10,6 @@ class ProductController():
         #Carrega os produtos
 
         # pc_gamer=Product("PC Gamer", "Eletronicos", "Um PC Monstro com os specs mais cabulosos do planeta terra", 1000, "assets./pcgamer.png")
-        # PRECISO INICIAR ASSIM??????
         
         self.products = [
             Product("PC Gamer", "Eletronicos", "Um PC Monstro com os specs mais cabulosos do planeta terra", 1000, "assets./pcgamer.png"),

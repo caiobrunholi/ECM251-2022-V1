@@ -1,25 +1,29 @@
 # Caio Rabinovich Panes Brunholi
 # RA: 20.01285-3
 
-from email.mime import image
+# PAGINA PRINCIPAL DA LOJINHA 
+
+# Importações de bibliotecas e classes
 import streamlit as st
 from src.controllers.kart_controller import Kart
 from src.controllers.product_controller import ProductController
 
-# NAO CONSIGO FAZER BOTAO IR PARA OUTRA ST.TAB
-
+# Criação do carrinho
 if "kart" not in st.session_state:
     st.session_state["kart"] = Kart()
 all_products = ProductController()
 
+# Adicionar ao carrinho
 def add_to_purchase(product_id):
     st.session_state["kart"].add_to_kart(all_products.products[product_id])
 
+# Remover do carrinho
 def remove_from_purchase(product_id):
     st.session_state["kart"].remove_from_kart(all_products.products[product_id])
 
-
+# Exibição de páginas
 def show_home_page():
+    # Logo
     st.image("assets./shopping_bag.png", width=75) 
     st.title("Lojinha Online")
 
@@ -148,6 +152,7 @@ def show_home_page():
         
 
     with shop_kart:
+        # Exibição do carrinho
         st.title("Carrinho")
 
         total=st.session_state["kart"].get_total_value()
@@ -186,7 +191,8 @@ def show_home_page():
                 st.metric(label="Valor Parcelado", value=f'{installments} de R${total/installments_opt}')
             
     with account:
-        # todos os produtos da lojinha
+        # Conta do usuário 
+        # Funções ainda não implementadas
         st.title("Conta")
         col1, col2, col3 = st.columns(3)
 
