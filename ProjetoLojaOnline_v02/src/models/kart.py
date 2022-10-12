@@ -11,7 +11,7 @@ class Kart():
     def get_total_value(self):
         total=0
         for product in self._products:
-            total+=product.get_price()
+            total+=product.price
         return total
 
     def get_quatity(self):

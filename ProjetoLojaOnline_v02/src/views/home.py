@@ -8,9 +8,16 @@ from src.controllers.product_controller import ProductController
 
 # NAO CONSIGO FAZER BOTAO IR PARA OUTRA ST.TAB
 
-
-kart1 = Kart()
+if "kart" not in st.session_state:
+    st.session_state["kart"] = Kart()
 all_products = ProductController()
+
+def add_to_purchase(product_id):
+    st.session_state["kart"].add_to_kart(all_products.products[product_id])
+
+def remove_from_purchase(product_id):
+    st.session_state["kart"].remove_from_kart(all_products.products[product_id])
+
 
 def show_home_page():
     st.image("assets./shopping_bag.png", width=75) 
@@ -49,21 +56,30 @@ def show_home_page():
             st.image(all_products.products[0].image,width=150)
             st.subheader(f'R${all_products.products[0].price},00')
             st.caption(all_products.products[0].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":0}, key=1000)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":0}, key=2000)
 
             st.subheader(all_products.products[3].name)
             st.image(all_products.products[3].image,width=150)
             st.subheader(f'R${all_products.products[3].price},00')
             st.caption(all_products.products[3].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":3}, key=1003)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":3}, key=2003)
 
             st.subheader(all_products.products[6].name)
             st.image(all_products.products[6].image,width=150)
             st.subheader(f'R${all_products.products[6].price},00')
             st.caption(all_products.products[6].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":6}, key=1006)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":6}, key=2006)
 
             st.subheader(all_products.products[9].name)
             st.image(all_products.products[9].image,width=150)
             st.subheader(f'R${all_products.products[9].price},00')
             st.caption(all_products.products[9].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":9}, key=1009)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":9}, key=2009)
+
         
         
         
@@ -73,21 +89,33 @@ def show_home_page():
             st.image(all_products.products[1].image,width=150)
             st.subheader(f'R${all_products.products[1].price},00')
             st.caption(all_products.products[1].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":1}, key=1001)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":1}, key=2001)
+
 
             st.subheader(all_products.products[4].name)
             st.image(all_products.products[4].image,width=150)
             st.subheader(f'R${all_products.products[4].price},00')
             st.caption(all_products.products[4].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":4}, key=1004)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":4}, key=2004)
+
 
             st.subheader(all_products.products[7].name)
             st.image(all_products.products[7].image,width=150)
             st.subheader(f'R${all_products.products[7].price},00')
             st.caption(all_products.products[7].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":7}, key=1007)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":7}, key=2007)
+
 
             st.subheader(all_products.products[10].name)
             st.image(all_products.products[10].image,width=150)
             st.subheader(f'R${all_products.products[10].price},00')
             st.caption(all_products.products[10].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":10}, key=1010)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":10}, key=2010)
+
         
         
         
@@ -97,16 +125,24 @@ def show_home_page():
             st.image(all_products.products[2].image,width=150)
             st.subheader(f'R${all_products.products[2].price},00')
             st.caption(all_products.products[2].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":2}, key=1002)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":2}, key=2002)
 
             st.subheader(all_products.products[5].name)
             st.image(all_products.products[5].image,width=150)
             st.subheader(f'R${all_products.products[5].price},00')
             st.caption(all_products.products[5].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":5}, key=1005)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":5}, key=2005)
+
 
             st.subheader(all_products.products[8].name)
             st.image(all_products.products[8].image,width=150)
             st.subheader(f'R${all_products.products[8].price},00')
             st.caption(all_products.products[8].desciption)
+            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":8}, key=1008)
+            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":8}, key=2008)
+
         
         
         
@@ -114,9 +150,8 @@ def show_home_page():
     with shop_kart:
         st.title("Carrinho")
 
-        # total= 100
-        total=kart1.get_total_value()
-        n_items=kart1.get_quatity()
+        total=st.session_state["kart"].get_total_value()
+        n_items=st.session_state["kart"].get_quatity()
         st.metric(label="Itens no Carrinho", value=f'{n_items} itens')
         st.metric(label="Total", value=f'R${total}')
 
@@ -149,7 +184,7 @@ def show_home_page():
                         installments_opt = 12
 
                 st.metric(label="Valor Parcelado", value=f'{installments} de R${total/installments_opt}')
-
+            
     with account:
         # todos os produtos da lojinha
         st.title("Conta")
