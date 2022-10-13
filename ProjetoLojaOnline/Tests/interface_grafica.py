@@ -37,14 +37,14 @@ class MinhaUI():
 
     def __init__(self) -> None:
         self.base = self._construir_base()
-        self.bot = self._criar_botao(texto="Log In", acao=NULL).pack(size=(100,100), side=LEFT)
-        # self.bot.grid(row=5, column=2, padx=5, pady=5)
-        # self.valor_digitado = ""
-        # self.text = self._criar_texto(guardar=self.valor_digitado)
-        # self.text.grid(row=2, column=1, padx=5, pady=5)
-        # self.text = self._criar_texto(guardar=self.valor_digitado)
-        # self.text.grid(row=3, column=1, padx=5, pady=5)
-        # self._criar_frame()
+        self.bot = self._criar_botao(texto="Log In", acao=NULL)
+        self.bot.grid(row=5, column=2, padx=5, pady=5)
+        self.valor_digitado = ""
+        self.text = self._criar_texto(guardar=self.valor_digitado)
+        self.text.grid(row=2, column=1, padx=5, pady=5)
+        self.text = self._criar_texto(guardar=self.valor_digitado)
+        self.text.grid(row=3, column=1, padx=5, pady=5)
+        self._criar_frame()
         
     def run(self):
         self.base.mainloop()
