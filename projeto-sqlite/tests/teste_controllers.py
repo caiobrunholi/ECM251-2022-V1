@@ -13,3 +13,7 @@ print("**************************************")
 items = controller.pegar_todos_itens()
 for item in items:
     print(item)
+
+print("**************************************")
+item = controller.pegar_item("CAF6")
+print(item)
