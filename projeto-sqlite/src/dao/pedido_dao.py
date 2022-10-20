@@ -1,5 +1,5 @@
 import sqlite3
-from src.models.item import Item
+from src.models.pedido import Pedido
 class PedidoDAO:
     
     _instance = None
@@ -23,16 +23,27 @@ class PedidoDAO:
         """)
         resultados = []
         for resultado in self.cursor.fetchall():
-            resultados.append(Item(id=resultado[0], nome=resultado[1], preco=resultado[2]))
+            resultados.append(Pedido(id=resultado[0], id_item=resultado[1], id_cliente=resultado[2], quantidade=resultado[3], numero_pedido=resultado[4], data_hora=resultado[5]))
         self.cursor.close()
         return resultados
     
-    def inserir_item(self, item):
+    def inserir_pedido(self, pedido):
         self.cursor = self.conn.cursor()
-        self.cursor.execute("""
-            INSERT INTO Itens (id, nome, preco)
-            VALUES(?,?,?);
-        """, (item.id, item.nome, item.preco))
+        self.cursor.execute(f"""
+            INSERT INTO Pedidos (id_item, 
+            id_cliente, 
+            quantidade,
+            numero_pedido,
+            data_e_hora
+            )
+            VALUES(
+                '{pedido.id_item}',
+                '{pedido.id_cliente}',
+                {pedido.qunantidade},
+                '{pedido.numero_pedido}'
+                '{pedido.data_e_hora}'
+            );
+        """)
         self.conn.commit()
         self.cursor.close()
 
