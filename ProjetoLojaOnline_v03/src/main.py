@@ -8,6 +8,7 @@ if "state" in st.session_state:
     st.session_state["state"]
 else:
     st.session_state["state"]=False
+
 class Main():
     def __init__(self) -> None:
         if st.session_state["state"]:

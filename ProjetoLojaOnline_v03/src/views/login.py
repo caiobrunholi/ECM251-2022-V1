@@ -42,6 +42,11 @@ def show_login_page():
             st.session_state["state"]
         else:
             st.session_state["state"]=False
+        
+        if "register" in st.session_state:
+            st.session_state["register"]
+        else:
+            st.session_state["register"]=False
 
     # text input
         user = st.text_input('Usuario', 'Username')
@@ -69,4 +74,8 @@ def show_login_page():
         
     if register_but:
         st.write("Cadastrar usuário!")
+        # st.session_state["register"] = True
+        # text input
+        new_user = st.text_input('Novo Usuario', 'Username')
+        new_password = st.text_input('Nova Senha', 'Password')
 
