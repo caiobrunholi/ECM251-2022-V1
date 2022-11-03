@@ -143,6 +143,27 @@ def show_home_page():
             st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":8}, key=1008)
             st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":8}, key=2008)
 
+        st.header("Adicionar um novo produto")
+        if "new_product" in st.session_state:
+            st.session_state["new_product"]
+        else:
+            st.session_state["new_product"]=False
+        def add_new_product():
+            st.write("Novo Produto Adicionado ao Banco de Dados")
+
+        new_product_id = st.text_input('ID do produto', 000)
+        new_product_name = st.text_input('Nome do novo produto', 'Product name')
+        new_category = st.text_input('Categoria do novo produto', 'Category')
+        new_description = st.text_input('Descrição do novo produto', 'Description')
+        new_price = st.text_input('Preço do novo produto', 00.00) 
+        new_image = st.text_input('Imagem do novo produto', "assets./example_image.png") 
+        add_to_datebase_but = st.button(
+            label="Adicionar Novo Produto", 
+            help="Adicionar",
+            on_click=add_new_product,
+            kwargs={}
+        )
+
         
         
         
@@ -185,6 +206,8 @@ def show_home_page():
 
                 st.metric(label="Valor Parcelado", value=f'{installments} de R${total/installments_opt}')
             
+            buy_but = st.button("Pagar") # Não implementado nessa versão
+
     with account:
         # todos os produtos da lojinha
         st.title("Conta")

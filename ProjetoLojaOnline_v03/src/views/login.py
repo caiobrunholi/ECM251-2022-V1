@@ -27,7 +27,7 @@ def update_profile_pic(png, user, password, but):
 
 def register_user():
     st.session_state["state"] = True
-    
+
 def show_login_page():
     st.title("Login")
 
@@ -79,7 +79,7 @@ def show_login_page():
         st.write("Cadastrar usuário!")
         # st.session_state["register"] = True
         # text input
-        nwe_name = st.text_input('Nome', 'Name')
+        new_name = st.text_input('Nome', 'Name')
         new_email = st.text_input('Novo E-mail', 'E-mail')
         new_user = st.text_input('Novo Nome de Usuário', 'Username')
         new_password = st.text_input('Nova Senha', 'Password')
