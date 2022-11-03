@@ -34,17 +34,17 @@ def show_home_page():
         with electronics:
             st.subheader("Eletrônicos")
             st.image("assets./electronics.png", width=200) 
-            st.button("Veja mais em Eletrônicos")
+            st.button("Veja mais em Eletrônicos") #Comando ainda não implementado
 
         with games:
             st.subheader("Jogos")
             st.image("assets./games.png", width=200) 
-            st.button("Veja mais em Jogos")
+            st.button("Veja mais em Jogos") #Comando ainda não implementado
 
         with food:
             st.subheader("Comida")
             st.image("assets./food.png", width=200) 
-            st.button("Veja mais em Comida")
+            st.button("Veja mais em Comida") #Comando ainda não implementado
 
     with products:
         # todos os produtos da lojinha

@@ -17,7 +17,14 @@
 EX:
 "assets./pcgamer.png"
 ```
-#
+# Para rodar
+#### Para rodar o sistema utilizar os comandos:
+```
+cd Scripts
+activate
+cd ..
+python -m streamlit run ./src/main.py
+```
 
 # MUDAR ISSO
 ### Usuario Hardcoded

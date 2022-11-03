@@ -25,6 +25,9 @@ def update_profile_pic(png, user, password, but):
             st.session_state["message"] = "Usuário e/ou Senha incorreto"
             st.session_state["state"] = False
 
+def register_user():
+    st.session_state["state"] = True
+    
 def show_login_page():
     st.title("Login")
 
@@ -76,6 +79,18 @@ def show_login_page():
         st.write("Cadastrar usuário!")
         # st.session_state["register"] = True
         # text input
-        new_user = st.text_input('Novo Usuario', 'Username')
+        nwe_name = st.text_input('Nome', 'Name')
+        new_email = st.text_input('Novo E-mail', 'E-mail')
+        new_user = st.text_input('Novo Nome de Usuário', 'Username')
         new_password = st.text_input('Nova Senha', 'Password')
+        new_credit_card = st.text_input('Novo Cartão de Crédito', 'Card') # Não implementado nessa versão
+        new_account_credit = st.text_input('Novo Crédito de Conta', 'Credit') # Não implementado nessa versão
+        done_but = st.button(
+            label="Done", 
+            help="Finalizar Cadastro",
+            on_click=register_user,
+            kwargs={}
+             
+        )
+            
 
