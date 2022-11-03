@@ -83,8 +83,8 @@ def show_login_page():
         new_email = st.text_input('Novo E-mail', 'E-mail')
         new_user = st.text_input('Novo Nome de Usuário', 'Username')
         new_password = st.text_input('Nova Senha', 'Password')
-        new_credit_card = st.text_input('Novo Cartão de Crédito', 'Card') # Não implementado nessa versão
-        new_account_credit = st.text_input('Novo Crédito de Conta', 'Credit') # Não implementado nessa versão
+        new_credit_card = st.text_input('Novo Cartão de Crédito', 'Credit Card') # Não implementado nessa versão
+        new_account_credit = st.text_input('Novo Crédito de Conta', 0.0) # Não implementado nessa versão
         done_but = st.button(
             label="Done", 
             help="Finalizar Cadastro",
