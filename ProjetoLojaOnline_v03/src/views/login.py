@@ -22,9 +22,12 @@ def update_profile_pic(png, user, password, but):
     if but == "Register":
         st.session_state["message"] = "Olá Novo Usuário"
     else:
-        if user == "Fulana" and password == "1234":
+        result = controller.pegar_user(username=user)
+        print(result)
+        if user == result.username and password == result.password:
             st.session_state["image"] = png
-            st.session_state["message"] = "Bem vindo Fulana!"
+            st.session_state["message"] = f"Bem vindo {result.name}!"
+            st.session_state["hello"]= result.name
             st.session_state["state"] = True
         else:
             st.session_state["image"] = png_unknown
@@ -66,6 +69,11 @@ def show_login_page():
         else:
             st.session_state["register"]=False
 
+        if "hello" in st.session_state:
+            st.session_state["hello"]
+        else:
+            st.session_state["hello"]='Usuario(a)'
+
     # text input
         user = st.text_input('Usuario', 'Username')
         password = st.text_input('Senha', 'Password')
@@ -94,10 +102,10 @@ def show_login_page():
         st.write("Cadastrar usuário!")
         # st.session_state["register"] = True
         # text input
-        new_name = st.text_input('Nome', 'Name')
+        new_name = st.text_input('Nome', 'NewName')
         new_email = st.text_input('Novo E-mail', 'E-mail')
         new_user = st.text_input('Novo Nome de Usuário', 'Username')
-        new_password = st.text_input('Nova Senha', 'Password')
+        new_password = st.text_input('Nova Senha', 'NewPassword')
         new_credit_card = st.text_input('Novo Cartão de Crédito', 'Credit Card') # Não implementado nessa versão
         new_account_credit = st.text_input('Novo Crédito de Conta', 0.0) # Não implementado nessa versão
         done_but = st.button(

@@ -7,6 +7,11 @@ from src.controllers.product_controller import ProductController
 
 # NAO CONSIGO FAZER BOTAO IR PARA OUTRA ST.TAB
 
+if "hello" in st.session_state:
+    st.session_state["hello"]
+else:
+    st.session_state["hello"]="Usuario(a)"
+
 # DESCOMENTAR
 # if "kart" not in st.session_state:
 #     st.session_state["kart"] = Kart()
@@ -238,7 +243,7 @@ def show_home_page():
 
         with col3:
             st.image("assets./female_user.png")
-            st.header("Fulana")
+            st.header(st.session_state["hello"])
             st.metric(label="Credito da conta", value=f'R$211,50',delta='R$20,00')
 
         st.title("")

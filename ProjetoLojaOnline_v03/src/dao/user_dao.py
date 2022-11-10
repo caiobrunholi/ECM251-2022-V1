@@ -14,12 +14,19 @@ class UserDAO:
         return cls._instance
 
     def _connect(self):
-        self.conn = sqlite3.connect('./databases/sqlite.db')
+        self.conn = sqlite3.connect('./databases/sqlite.db', check_same_thread=False)
         print('connected to db')
         
 
     def pegar_user(self, username):
+        print('pegar user DAO function')
         self.cursor = self.conn.cursor()
+
+        print(f"""
+            string to be excuted
+            SELECT * FROM User
+            WHERE username = '{username}';
+        """)
         self.cursor.execute(f"""
             SELECT * FROM User
             WHERE username = '{username}';
