@@ -31,13 +31,14 @@ def update_profile_pic(png, user, password, but):
             st.session_state["message"] = "Usuário e/ou Senha incorreto"
             st.session_state["state"] = False
 
-def register_user():
+def register_user(new_name, new_email, new_user, new_password, new_credit_card, new_account_credit):
     # teste - trocar por kargs
-    user = User(name='Fake', email='fake@email.com', username='Fake', password='fake', credit_card='creditfake', account_credit=1.0)
+    # user = User(name='Fake', email='fake@email.com', username='Fake', password='fake', credit_card='creditfake', account_credit=1.0)
+    user = User(name=new_name, email=new_email, username=new_user, password=new_password, credit_card=new_credit_card, account_credit=new_account_credit)
     success = controller.inserir_user(user)
     print(success)
 
-    time.sleep(2)
+    time.sleep(1)
     # permite o acesso a lojinha após cadastro
     if success:
         st.session_state["state"] = True
@@ -103,8 +104,7 @@ def show_login_page():
             label="Done", 
             help="Finalizar Cadastro",
             on_click=register_user,
-            kwargs={}
-             
+            kwargs={"new_name":new_name, "new_email":new_email, "new_user":new_user, "new_password":new_password, "new_credit_card":new_credit_card, "new_account_credit":new_account_credit}
         )
             
 
