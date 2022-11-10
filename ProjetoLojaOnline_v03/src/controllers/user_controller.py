@@ -2,7 +2,6 @@
 # RA: 20.01285-3
 from src.models.user import User
 from src.dao.user_dao import UserDAO
-from src.models.credit_card import CreditCard
 
 # Login usando o user_controller ainda não implementado
 

@@ -2,8 +2,14 @@
 # RA: 20.01285-3
 
 import streamlit as st
+from src.models.user import User
+from src.controllers.user_controller import UserController
+import time
 
 # Login usando o user_controller ainda não implementado
+
+# instancia de controller
+controller=UserController()
 
 # imagens
 png_unknown = "assets./unknown_user.png"
@@ -26,7 +32,15 @@ def update_profile_pic(png, user, password, but):
             st.session_state["state"] = False
 
 def register_user():
-    st.session_state["state"] = True
+    # teste - trocar por kargs
+    user = User(name='Fake', email='fake@email.com', username='Fake', password='fake', credit_card='creditfake', account_credit=1.0)
+    success = controller.inserir_user(user)
+    print(success)
+
+    time.sleep(2)
+    # permite o acesso a lojinha após cadastro
+    if success:
+        st.session_state["state"] = True
 
 def show_login_page():
     st.title("Login")

@@ -1,4 +1,4 @@
-from turtle import delay
+import time
 from src.views.login import show_login_page
 from src.views.home import show_home_page
 import streamlit as st
@@ -12,7 +12,7 @@ else:
 class Main():
     def __init__(self) -> None:
         if st.session_state["state"]:
-            delay(1000)
+            time.sleep(1)
             show_home_page()
         else:
             show_login_page()

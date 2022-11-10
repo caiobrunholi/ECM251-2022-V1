@@ -7,15 +7,16 @@ from src.controllers.product_controller import ProductController
 
 # NAO CONSIGO FAZER BOTAO IR PARA OUTRA ST.TAB
 
-if "kart" not in st.session_state:
-    st.session_state["kart"] = Kart()
-all_products = ProductController()
+# DESCOMENTAR
+# if "kart" not in st.session_state:
+#     st.session_state["kart"] = Kart()
+# all_products = ProductController()
 
-def add_to_purchase(product_id):
-    st.session_state["kart"].add_to_kart(all_products.products[product_id])
+# def add_to_purchase(product_id):
+#     st.session_state["kart"].add_to_kart(all_products.products[product_id])
 
-def remove_from_purchase(product_id):
-    st.session_state["kart"].remove_from_kart(all_products.products[product_id])
+# def remove_from_purchase(product_id):
+#     st.session_state["kart"].remove_from_kart(all_products.products[product_id])
 
 def update_user_database():
     pass
@@ -178,42 +179,43 @@ def show_home_page():
     with shop_kart:
         st.title("Carrinho")
 
-        total=st.session_state["kart"].get_total_value()
-        n_items=st.session_state["kart"].get_quatity()
-        st.metric(label="Itens no Carrinho", value=f'{n_items} itens')
-        st.metric(label="Total", value=f'R${total}')
+        #  DESCOMENTAR
+        # total=st.session_state["kart"].get_total_value()
+        # n_items=st.session_state["kart"].get_quatity()
+        # st.metric(label="Itens no Carrinho", value=f'{n_items} itens')
+        # st.metric(label="Total", value=f'R${total}')
 
-        # seleção da foma de pagamento
-        with st.container():
-            payment = st.selectbox(
-            "Qual será a forma de pagamento?",
-            ("Boleto", "Cartão de Crédito", "Crédito em conta"))
+        # # seleção da foma de pagamento
+        # with st.container():
+        #     payment = st.selectbox(
+        #     "Qual será a forma de pagamento?",
+        #     ("Boleto", "Cartão de Crédito", "Crédito em conta"))
 
-            # parcelamento se a opção selecionada for cartão de crédito
-            if payment == "Cartão de Crédito":
-                installments = st.selectbox(
-                "Parcelamento",
-                ("1x à vista", "2x sem juros", "3x sem juros", "4x sem juros", "5x sem juros", "6x sem juros", "12x sem juros"))
+        #     # parcelamento se a opção selecionada for cartão de crédito
+        #     if payment == "Cartão de Crédito":
+        #         installments = st.selectbox(
+        #         "Parcelamento",
+        #         ("1x à vista", "2x sem juros", "3x sem juros", "4x sem juros", "5x sem juros", "6x sem juros", "12x sem juros"))
                 
-                match installments:
-                    case "1x à vista":
-                        installments_opt = 1
-                    case "2x sem juros":
-                        installments_opt = 2
-                    case "3x sem juros":
-                        installments_opt = 3                
-                    case "4x sem juros":
-                        installments_opt = 4
-                    case "5x sem juros":
-                        installments_opt = 5                
-                    case "6x sem juros":
-                        installments_opt = 6                
-                    case "12x sem juros":
-                        installments_opt = 12
+        #         match installments:
+        #             case "1x à vista":
+        #                 installments_opt = 1
+        #             case "2x sem juros":
+        #                 installments_opt = 2
+        #             case "3x sem juros":
+        #                 installments_opt = 3                
+        #             case "4x sem juros":
+        #                 installments_opt = 4
+        #             case "5x sem juros":
+        #                 installments_opt = 5                
+        #             case "6x sem juros":
+        #                 installments_opt = 6                
+        #             case "12x sem juros":
+        #                 installments_opt = 12
 
-                st.metric(label="Valor Parcelado", value=f'{installments} de R${total/installments_opt}')
-            
-            buy_but = st.button("Pagar") # Não implementado nessa versão
+        #         st.metric(label="Valor Parcelado", value=f'{installments} de R${total/installments_opt}')
+
+            # buy_but = st.button("Pagar") # Não implementado nessa versão
 
     with account:
         # todos os produtos da lojinha

@@ -15,6 +15,8 @@ class UserDAO:
 
     def _connect(self):
         self.conn = sqlite3.connect('./databases/sqlite.db')
+        print('connected to db')
+        
 
     def pegar_user(self, username):
         self.cursor = self.conn.cursor()
@@ -30,13 +32,29 @@ class UserDAO:
         return user
 
     def inserir_user(self, user):
-            self.cursor = self.conn.cursor()
-            self.cursor.execute("""
+        try:
+            print('insert user DAO function')
+            print(user)
+            print(user.credit_card)
+            print("""
                 INSERT INTO User (name, email, username. password, creditcard, accountcredit)
                 VALUES(?,?,?,?,?,?);
-            """, (user.name, user.email, user.username, user.password, user.creditcard, user.accountcredit))
+            """, (user.name, user.email, user.username, user.password, user.credit_card, user.account_credit))
+
+            self.cursor = self.conn.cursor()
+            
+            self.cursor.execute(f"""
+                INSERT INTO User (name, email, username, password, creditcard, accountcredit)
+                VALUES('{user.name}', '{user.email}', '{user.username}', '{user.password}', '{user.credit_card}', {user.account_credit});
+            """)
             self.conn.commit()
+            print('commited')
             self.cursor.close()
+            print('closed')
+        except:
+            return False
+        return True
+    
 
     def get_all(self):
         self.cursor = self.conn.cursor()
