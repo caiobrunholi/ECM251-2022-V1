@@ -1,7 +1,6 @@
 # Caio Rabinovich Panes Brunholi
 # RA: 20.01285-3
 
-from email.mime import image
 import streamlit as st
 from src.controllers.kart_controller import Kart
 from src.controllers.product_controller import ProductController
@@ -17,6 +16,9 @@ def add_to_purchase(product_id):
 
 def remove_from_purchase(product_id):
     st.session_state["kart"].remove_from_kart(all_products.products[product_id])
+
+def update_user_database():
+    pass
 
 
 def show_home_page():
@@ -52,96 +54,101 @@ def show_home_page():
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            st.subheader(all_products.products[0].name)
-            st.image(all_products.products[0].image,width=150)
-            st.subheader(f'R${all_products.products[0].price},00')
-            st.caption(all_products.products[0].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":0}, key=1000)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":0}, key=2000)
+            # st.subheader(all_products.products[0].name)
+            # st.image(all_products.products[0].image,width=150)
+            # st.subheader(f'R${all_products.products[0].price},00')
+            # st.caption(all_products.products[0].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":0}, key=1000)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":0}, key=2000)
 
-            st.subheader(all_products.products[3].name)
-            st.image(all_products.products[3].image,width=150)
-            st.subheader(f'R${all_products.products[3].price},00')
-            st.caption(all_products.products[3].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":3}, key=1003)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":3}, key=2003)
+            # st.subheader(all_products.products[3].name)
+            # st.image(all_products.products[3].image,width=150)
+            # st.subheader(f'R${all_products.products[3].price},00')
+            # st.caption(all_products.products[3].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":3}, key=1003)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":3}, key=2003)
 
-            st.subheader(all_products.products[6].name)
-            st.image(all_products.products[6].image,width=150)
-            st.subheader(f'R${all_products.products[6].price},00')
-            st.caption(all_products.products[6].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":6}, key=1006)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":6}, key=2006)
+            # st.subheader(all_products.products[6].name)
+            # st.image(all_products.products[6].image,width=150)
+            # st.subheader(f'R${all_products.products[6].price},00')
+            # st.caption(all_products.products[6].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":6}, key=1006)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":6}, key=2006)
 
-            st.subheader(all_products.products[9].name)
-            st.image(all_products.products[9].image,width=150)
-            st.subheader(f'R${all_products.products[9].price},00')
-            st.caption(all_products.products[9].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":9}, key=1009)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":9}, key=2009)
+            # st.subheader(all_products.products[9].name)
+            # st.image(all_products.products[9].image,width=150)
+            # st.subheader(f'R${all_products.products[9].price},00')
+            # st.caption(all_products.products[9].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":9}, key=1009)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":9}, key=2009)
+            pass
 
-        
         
         
         
         with col2:
-            st.subheader(all_products.products[1].name)
-            st.image(all_products.products[1].image,width=150)
-            st.subheader(f'R${all_products.products[1].price},00')
-            st.caption(all_products.products[1].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":1}, key=1001)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":1}, key=2001)
+            # st.subheader(all_products.products[1].name)
+            # st.image(all_products.products[1].image,width=150)
+            # st.subheader(f'R${all_products.products[1].price},00')
+            # st.caption(all_products.products[1].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":1}, key=1001)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":1}, key=2001)
 
 
-            st.subheader(all_products.products[4].name)
-            st.image(all_products.products[4].image,width=150)
-            st.subheader(f'R${all_products.products[4].price},00')
-            st.caption(all_products.products[4].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":4}, key=1004)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":4}, key=2004)
+            # st.subheader(all_products.products[4].name)
+            # st.image(all_products.products[4].image,width=150)
+            # st.subheader(f'R${all_products.products[4].price},00')
+            # st.caption(all_products.products[4].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":4}, key=1004)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":4}, key=2004)
 
 
-            st.subheader(all_products.products[7].name)
-            st.image(all_products.products[7].image,width=150)
-            st.subheader(f'R${all_products.products[7].price},00')
-            st.caption(all_products.products[7].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":7}, key=1007)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":7}, key=2007)
+            # st.subheader(all_products.products[7].name)
+            # st.image(all_products.products[7].image,width=150)
+            # st.subheader(f'R${all_products.products[7].price},00')
+            # st.caption(all_products.products[7].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":7}, key=1007)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":7}, key=2007)
 
 
-            st.subheader(all_products.products[10].name)
-            st.image(all_products.products[10].image,width=150)
-            st.subheader(f'R${all_products.products[10].price},00')
-            st.caption(all_products.products[10].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":10}, key=1010)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":10}, key=2010)
+            # st.subheader(all_products.products[10].name)
+            # st.image(all_products.products[10].image,width=150)
+            # st.subheader(f'R${all_products.products[10].price},00')
+            # st.caption(all_products.products[10].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":10}, key=1010)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":10}, key=2010)
+            pass
 
         
         
         
 
         with col3:
-            st.subheader(all_products.products[2].name)
-            st.image(all_products.products[2].image,width=150)
-            st.subheader(f'R${all_products.products[2].price},00')
-            st.caption(all_products.products[2].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":2}, key=1002)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":2}, key=2002)
+            # st.subheader(all_products.products[2].name)
+            # st.image(all_products.products[2].image,width=150)
+            # st.subheader(f'R${all_products.products[2].price},00')
+            # st.caption(all_products.products[2].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":2}, key=1002)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":2}, key=2002)
 
-            st.subheader(all_products.products[5].name)
-            st.image(all_products.products[5].image,width=150)
-            st.subheader(f'R${all_products.products[5].price},00')
-            st.caption(all_products.products[5].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":5}, key=1005)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":5}, key=2005)
+            # st.subheader(all_products.products[5].name)
+            # st.image(all_products.products[5].image,width=150)
+            # st.subheader(f'R${all_products.products[5].price},00')
+            # st.caption(all_products.products[5].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":5}, key=1005)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":5}, key=2005)
 
 
-            st.subheader(all_products.products[8].name)
-            st.image(all_products.products[8].image,width=150)
-            st.subheader(f'R${all_products.products[8].price},00')
-            st.caption(all_products.products[8].desciption)
-            st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":8}, key=1008)
-            st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":8}, key=2008)
+            # st.subheader(all_products.products[8].name)
+            # st.image(all_products.products[8].image,width=150)
+            # st.subheader(f'R${all_products.products[8].price},00')
+            # st.caption(all_products.products[8].desciption)
+            # st.button(label="Adicionar ao carrinho", on_click=add_to_purchase,kwargs={"product_id":8}, key=1008)
+            # st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_id":8}, key=2008)
+            pass
+
+
+
 
         st.header("Adicionar um novo produto")
         if "new_product" in st.session_state:
@@ -231,3 +238,16 @@ def show_home_page():
             st.image("assets./female_user.png")
             st.header("Fulana")
             st.metric(label="Credito da conta", value=f'R$211,50',delta='R$20,00')
+
+        st.title("")
+        st.title("Atualizar Dados de Conta")
+
+        logged_username = st.text_input('Seu Nome de Usuário', 'Username')
+        altered_email = st.text_input('Novo Endereço de Email', 'New Email')
+        altered_password = st.text_input('Nova Senha', 'New Password')
+        st.button(
+            "Atualizar Dados",
+            help="Finalizar atualização de dados",
+            on_click=update_user_database,
+            # kwargs
+        )
