@@ -29,8 +29,6 @@ else:
 # def remove_from_purchase(product_id):
 #     st.session_state["kart"].remove_from_kart(all_products.products[product_id])
 
-def update_user_database():
-    pass
 
 
 def show_home_page():
@@ -261,6 +259,22 @@ def show_home_page():
         st.title("")
         st.title("Atualizar Dados de Conta")
 
+        def update_user_database(logged_username, altered_email, altered_password):
+            altered_user = user_controller.pegar_user(username=logged_username)
+            if altered_user == None:
+                st.write("Nome de Usuário Desconhecido")
+            else:
+                print(altered_user)
+                altered_user.email = altered_email
+                altered_user.password = altered_password
+                print(altered_user)
+                success = user_controller.atualizar_user(altered_user)
+                if success:
+                    print("Dados de usuario atualizado")
+                    st.write(f"Os dados do usuário {altered_user.username} foram atualizados!")
+
+
+
         logged_username = st.text_input('Seu Nome de Usuário', 'Username')
         altered_email = st.text_input('Novo Endereço de Email', 'New Email')
         altered_password = st.text_input('Nova Senha', 'New Password')
@@ -268,5 +282,5 @@ def show_home_page():
             "Atualizar Dados",
             help="Finalizar atualização de dados",
             on_click=update_user_database,
-            # kwargs
+            kwargs={"logged_username":logged_username, "altered_email":altered_email,"altered_password":altered_password}
         )

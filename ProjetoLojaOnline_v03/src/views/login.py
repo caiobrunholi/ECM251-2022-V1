@@ -24,7 +24,7 @@ def update_profile_pic(png, user, password, but):
     else:
         result = controller.pegar_user(username=user)
         print(result)
-        if user == result.username and password == result.password:
+        if result != None and user == result.username and password == result.password:
             st.session_state["image"] = png
             st.session_state["message"] = f"Bem vindo {result.name}!"
             st.session_state["hello"]= result.name

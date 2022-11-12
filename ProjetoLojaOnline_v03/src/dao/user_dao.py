@@ -76,19 +76,26 @@ class UserDAO:
         return resultados
 
     def atualizar_user(self, user):
+        print('update user DAO function')
         try:
             self.cursor = self.conn.cursor()
+            print(f"""
+                string to be executed
+                UPDATE User SET
+                email = '{user.email}',
+                password = '{user.password}'
+                WHERE username = '{user.username}'
+            """)
             self.cursor.execute(f"""
                 UPDATE User SET
-                name = '{user.name}',
                 email = '{user.email}',
-                password = '{user.password}',
-                creditcard = '{user.creditcard}',
-                accountcredit = {user.accountcredit},
+                password = '{user.password}'
                 WHERE username = '{user.username}'
             """)
             self.conn.commit()
+            print('commited')
             self.cursor.close()
+            print('closed')
         except:
             return False
         return True
