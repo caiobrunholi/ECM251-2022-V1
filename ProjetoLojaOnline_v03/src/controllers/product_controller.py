@@ -33,9 +33,9 @@ class ProductController():
             produto = ProductDAO.get_instance().pegar_produto(id)
             return produto
 
-    def inserir_produto(self, item) -> bool:
+    def inserir_produto(self, produto) -> bool:
         try:
-            ProductDAO.get_instance().inserir_item(item)
+            ProductDAO.get_instance().inserir_produto(produto)
         except:
             return False
         return True
@@ -45,7 +45,7 @@ class ProductController():
         return products
     
     def atualizar_produto(self, product) -> bool:
-        return ProductDAO.get_instance().atualizar_item(product)
+        return ProductDAO.get_instance().atualizar_produto(product)
 
     def deletar_produto(self, id) -> bool:
         return ProductDAO.get_instance().deletar_item(id)

@@ -2,15 +2,16 @@
 # RA: 20.01285-3
 class Product():
     # inicia classe
-    def __init__(self, name, category, description, price, image) -> None:
+    def __init__(self, id, name, category, description, price, image) -> None:
+        self.id = id
         self.name = name
         self.category = category
-        self.desciption = description
+        self.description = description
         self.price = price
         self.image = image
 
     def __str__(self) -> str:
-        return f'Product(name:{self.name}, category:{self.category}, description:{self.desciption}, price:{self.price})'
+        return f'Product(id:{self.id}, name:{self.name}, category:{self.category}, description:{self.description}, price:{self.price}, image:{self.image})'
 
     # getters
     def get_name(self):

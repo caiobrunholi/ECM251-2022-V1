@@ -3,9 +3,15 @@
 
 import streamlit as st
 from src.controllers.kart_controller import Kart
+from src.models.product import Product
 from src.controllers.product_controller import ProductController
+from src.models.user import User
+from src.controllers.user_controller import UserController
 
-# NAO CONSIGO FAZER BOTAO IR PARA OUTRA ST.TAB
+
+user_controller=UserController()
+product_controller=ProductController()
+
 
 if "hello" in st.session_state:
     st.session_state["hello"]
@@ -161,8 +167,14 @@ def show_home_page():
             st.session_state["new_product"]
         else:
             st.session_state["new_product"]=False
-        def add_new_product():
-            st.write("Novo Produto Adicionado ao Banco de Dados")
+
+        def add_new_product(new_product_id, new_product_name, new_category, new_description, new_price, new_image):
+            new_product = Product(id=new_product_id, name=new_product_name, category=new_category, description=new_description, price=new_price, image=new_image)
+            print(new_product)
+            success = product_controller.inserir_produto(new_product) 
+            if success:
+                print("Novo Produto Adicionado ao Banco de Dados")
+                st.write("Novo Produto Adicionado ao Banco de Dados")
 
         new_product_id = st.text_input('ID do produto', 000)
         new_product_name = st.text_input('Nome do novo produto', 'Product name')
@@ -174,7 +186,7 @@ def show_home_page():
             label="Adicionar Novo Produto", 
             help="Adicionar",
             on_click=add_new_product,
-            kwargs={}
+            kwargs={"new_product_id":new_product_id, "new_product_name":new_product_name, "new_category":new_category, "new_description":new_description, "new_price":new_price, "new_image":new_image}
         )
 
         

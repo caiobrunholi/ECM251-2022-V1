@@ -43,10 +43,11 @@ class UserDAO:
             print('insert user DAO function')
             print(user)
             print(user.credit_card)
-            print("""
-                INSERT INTO User (name, email, username. password, creditcard, accountcredit)
-                VALUES(?,?,?,?,?,?);
-            """, (user.name, user.email, user.username, user.password, user.credit_card, user.account_credit))
+            print(f"""
+                string to be executed
+                INSERT INTO User (name, email, username, password, creditcard, accountcredit)
+                VALUES('{user.name}', '{user.email}', '{user.username}', '{user.password}', '{user.credit_card}', {user.account_credit});
+            """)
 
             self.cursor = self.conn.cursor()
             

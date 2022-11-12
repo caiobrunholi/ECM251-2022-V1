@@ -15,6 +15,7 @@ class ProductDAO:
 
     def _connect(self):
         self.conn = sqlite3.connect('./databases/sqlite.db', check_same_thread=False)
+        print("connected do db")
 
     def get_all(self):
         self.cursor = self.conn.cursor()
@@ -28,13 +29,26 @@ class ProductDAO:
         return resultados
     
     def inserir_produto(self, product):
-        self.cursor = self.conn.cursor()
-        self.cursor.execute("""
-            INSERT INTO Product(id,name,category,description,price,image)
-            VALUES(?,?,?,?,?,?);
-        """, (product.id, product.name, product.category, product.description, product.price, product.image))
-        self.conn.commit()
-        self.cursor.close()
+        print('insert product DAO function')
+        try:
+            self.cursor = self.conn.cursor()
+            print(f"""
+                string to be executed
+                INSERT INTO Product(id,name,category,description,price,image)
+                VALUES({product.id},'{product.name}','{product.category}','{product.description}',{product.price},'{product.image}');
+            """)
+            self.cursor.execute(f"""
+                INSERT INTO Product(id,name,category,description,price,image)
+                VALUES({product.id},'{product.name}','{product.category}','{product.description}',{product.price},'{product.image}');
+            """)
+            self.conn.commit()
+            print('commited')
+            self.cursor.close()
+            print('closed')
+        except:
+            return False
+        return True
+    
     def pegar_produto(self, id):
         self.cursor = self.conn.cursor()
         self.cursor.execute(f"""
