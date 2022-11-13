@@ -1,3 +1,5 @@
+# Caio Rabinovich Panes Brunholi
+# RA: 20.01285-3
 import sqlite3
 from src.models.user import User
 
@@ -8,16 +10,18 @@ class UserDAO:
         self._connect()
 
     @classmethod
+    # cria instancia
     def get_instance(cls):
         if cls._instance == None:
             cls._instance = UserDAO()
         return cls._instance
 
+    # conecta ao banco de dados
     def _connect(self):
         self.conn = sqlite3.connect('./databases/sqlite.db', check_same_thread=False)
         print('connected to db')
         
-
+    # funcoes
     def pegar_user(self, username):
         print('pegar user DAO function')
         self.cursor = self.conn.cursor()

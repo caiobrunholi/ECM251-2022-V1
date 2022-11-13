@@ -1,3 +1,5 @@
+# Caio Rabinovich Panes Brunholi
+# RA: 20.01285-3
 import time
 from src.views.login import show_login_page
 from src.views.home import show_home_page

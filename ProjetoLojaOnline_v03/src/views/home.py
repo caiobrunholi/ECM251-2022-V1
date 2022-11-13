@@ -8,7 +8,7 @@ from src.controllers.product_controller import ProductController
 from src.models.user import User
 from src.controllers.user_controller import UserController
 
-
+# importa controladores
 user_controller=UserController()
 product_controller=ProductController()
 
@@ -18,14 +18,14 @@ if "hello" in st.session_state:
 else:
     st.session_state["hello"]="Usuario(a)"
 
-# DESCOMENTAR
-# Criar carrinho
+# criar carrinho
 if "kart" not in st.session_state:
     st.session_state["kart"] = Kart()
 
-# Importar todos os produtos do banco de dados
+# importar todos os produtos do banco de dados
 all_products = product_controller.pegar_todos_produtos()
 
+# controle do carrinho
 def add_to_purchase(product_number_in_list):
     st.session_state["kart"].add_to_kart(all_products[product_number_in_list])
 
@@ -49,17 +49,17 @@ def show_home_page():
         with electronics:
             st.subheader("Eletrônicos")
             st.image("assets./electronics.png", width=200) 
-            st.button("Veja mais em Eletrônicos") #Comando ainda não implementado
+            st.button("Veja mais em Eletrônicos") # comando ainda não implementado
 
         with games:
             st.subheader("Jogos")
             st.image("assets./games.png", width=200) 
-            st.button("Veja mais em Jogos") #Comando ainda não implementado
+            st.button("Veja mais em Jogos") # comando ainda não implementado
 
         with food:
             st.subheader("Comida")
             st.image("assets./food.png", width=200) 
-            st.button("Veja mais em Comida") #Comando ainda não implementado
+            st.button("Veja mais em Comida") # comando ainda não implementado
 
     with products:
         # todos os produtos da lojinha
@@ -85,7 +85,7 @@ def show_home_page():
                     st.button(label="Remover do carrinho", on_click=remove_from_purchase,kwargs={"product_number_in_list":n}, key=n+1000)
 
 
-
+        # adicao de novo produto
         st.header("Adicionar um novo produto")
         if "new_product" in st.session_state:
             st.session_state["new_product"]

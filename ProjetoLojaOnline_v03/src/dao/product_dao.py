@@ -1,3 +1,6 @@
+# Caio Rabinovich Panes Brunholi
+# RA: 20.01285-3
+
 import sqlite3
 from src.models.product import Product
 class ProductDAO:
@@ -8,15 +11,18 @@ class ProductDAO:
         self._connect()
 
     @classmethod
+    # cria instancia
     def get_instance(cls):
         if cls._instance == None:
             cls._instance = ProductDAO()
         return cls._instance
 
+    # conecta ao banco de dados
     def _connect(self):
         self.conn = sqlite3.connect('./databases/sqlite.db', check_same_thread=False)
         print("connected do db")
 
+    # funcoes
     def get_all(self):
         print('get al products DAO function')
         self.cursor = self.conn.cursor()

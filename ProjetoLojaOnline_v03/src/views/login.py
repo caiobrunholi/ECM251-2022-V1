@@ -6,8 +6,6 @@ from src.models.user import User
 from src.controllers.user_controller import UserController
 import time
 
-# Login usando o user_controller ainda não implementado
-
 # instancia de controller
 controller=UserController()
 
@@ -17,7 +15,7 @@ png_female = "assets./female_user.png"
 png_male = "assets./male_user.png"
 
 
-# funcao de atualizacao da imagem e texto da tela de login
+# funcao de atualizacao da imagem / texto da tela de login / autorizacao de usuario
 def update_profile_pic(png, user, password, but):
     if but == "Register":
         st.session_state["message"] = "Olá Novo Usuário"
@@ -34,15 +32,16 @@ def update_profile_pic(png, user, password, but):
             st.session_state["message"] = "Usuário e/ou Senha incorreto"
             st.session_state["state"] = False
 
+# funcao para registrar novo usuario
 def register_user(new_name, new_email, new_user, new_password, new_credit_card, new_account_credit):
-    # teste - trocar por kargs
+    # usuario de teste
     # user = User(name='Fake', email='fake@email.com', username='Fake', password='fake', credit_card='creditfake', account_credit=1.0)
     user = User(name=new_name, email=new_email, username=new_user, password=new_password, credit_card=new_credit_card, account_credit=new_account_credit)
     success = controller.inserir_user(user)
     print(success)
 
     time.sleep(1)
-    # permite o acesso a lojinha após cadastro
+    # permite o acesso a lojinha pos cadastro
     if success:
         st.session_state["state"] = True
 
@@ -50,7 +49,7 @@ def show_login_page():
     st.title("Login")
 
     with st.container():
-        # funcoes de estano iniciais
+        # funcoes de estado iniciais
         if "image" in st.session_state:
             st.image(st.session_state["image"],width=100)
         else:
@@ -100,7 +99,6 @@ def show_login_page():
         
     if register_but:
         st.write("Cadastrar usuário!")
-        # st.session_state["register"] = True
         # text input
         new_name = st.text_input('Nome', 'NewName')
         new_email = st.text_input('Novo E-mail', 'E-mail')
