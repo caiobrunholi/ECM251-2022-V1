@@ -18,14 +18,20 @@ class ProductDAO:
         print("connected do db")
 
     def get_all(self):
+        print('get al products DAO function')
         self.cursor = self.conn.cursor()
-        self.cursor.execute("""
+        print("""
+            string to be executed
             SELECT * FROM Products;
+        """)
+        self.cursor.execute("""
+            SELECT * FROM Product;
         """)
         resultados = []
         for resultado in self.cursor.fetchall():
             resultados.append(Product(id=resultado[0], name=resultado[1], category=resultado[2], description=resultado[3], image=resultado[4], price=resultado[5]))
         self.cursor.close()
+        print('closed')
         return resultados
     
     def inserir_produto(self, product):
