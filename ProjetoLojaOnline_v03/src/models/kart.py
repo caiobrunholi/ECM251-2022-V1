@@ -17,6 +17,10 @@ class Kart():
     def get_quatity(self):
         return len(self._products)
 
+    def get_item_in_array(self,n):
+        return self._products[n]
+
+
     # adicionar ao carrinho
     def add_to_kart(self,product):
         self._products.append(product)
